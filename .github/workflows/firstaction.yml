@@ -49,7 +49,7 @@ jobs:
         api_secret: ${{ secrets.WEATHERSTACK_SECRET}}
       steps:
         - name: Current Weather
-          run: curl -s --url http://api.weatherstack.com/current?access_key=$api_secret&query=$location
+          run: curl -s --url http://api.weatherstack.com/current?access_key=$api_secret&query=Vancouver
   dump:
     runs-on: ubuntu-latest
     steps:
