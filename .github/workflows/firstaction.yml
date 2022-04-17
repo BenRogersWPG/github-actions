@@ -53,6 +53,15 @@ jobs:
         run: | 
           curl -s --url http://api.weatherstack.com/current?access_key=$api_secret&query=$postalcode
           echo $cityname
+      - name: Test Weather
+        run: | 
+          curl -s --url http://api.weatherstack.com/current?access_key=$api_secret&query=$cityname
+          echo $postalcode
+      - name: Encode Weather
+        run: | 
+          curl -s --url http://api.weatherstack.com/current?access_key=$api_secret%26query=$cityname
+          echo $postalcode
+          echo $cityname
   dump:
     runs-on: ubuntu-latest
     steps:
