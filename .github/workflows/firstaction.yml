@@ -43,13 +43,13 @@ jobs:
           echo test, and deploy your project.
 
   weather:
-      runs-on: ubuntu-latest
-      env:
-        location: Vancouver
-        api_secret: ${{ secrets.WEATHERSTACK_SECRET}}
-      steps:
-        - name: Current Weather
-          run: curl -s --url http://api.weatherstack.com/current?query=vancouver&access_key=$api_secret
+    runs-on: ubuntu-latest
+    env:
+      location: Vancouver
+      api_secret: ${{ secrets.WEATHERSTACK_SECRET }}
+    steps:
+      - name: Current Weather
+        run: curl -s --url http://api.weatherstack.com/current?query=vancouver&access_key=$api_secret
   dump:
     runs-on: ubuntu-latest
     steps:
