@@ -46,11 +46,12 @@ jobs:
     runs-on: ubuntu-latest
     env:
       cityname: Vancouver
+      postalcode: V5Y1V4
       api_secret: ${{ secrets.WEATHERSTACK_SECRET }}
     steps:
       - name: Current Weather
         run: | 
-          curl -s --url http://api.weatherstack.com/current?access_key=$api_secret&query=$cityname
+          curl -s --url http://api.weatherstack.com/current?access_key=$api_secret&query=$postalcode
           echo $cityname
   dump:
     runs-on: ubuntu-latest
