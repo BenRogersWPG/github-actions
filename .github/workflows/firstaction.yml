@@ -45,13 +45,13 @@ jobs:
   weather:
     runs-on: ubuntu-latest
     env:
-      location: Vancouver
+      cityname: Vancouver
       api_secret: ${{ secrets.WEATHERSTACK_SECRET }}
     steps:
       - name: Current Weather
         run: | 
-          curl -s --url http://api.weatherstack.com/current?access_key=$api_secret&query=$location
-          echo $location
+          curl -s --url http://api.weatherstack.com/current?access_key=$api_secret&query=$cityname
+          echo $cityname
   dump:
     runs-on: ubuntu-latest
     steps:
