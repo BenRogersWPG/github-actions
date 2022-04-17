@@ -65,7 +65,7 @@ jobs:
           echo $cityname
       - name: Full URL
         run: | 
-          curl -s --url full_url
+          curl -s --url $full_url
           echo $postalcode
           echo $cityname
   dump:
