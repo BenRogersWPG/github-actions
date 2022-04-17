@@ -45,7 +45,7 @@ jobs:
   weather:
       runs-on: ubuntu-latest
       env:
-        location: 'Vancouver'
+        location: Vancouver
         api_secret: ${{ secrets.WEATHERSTACK_SECRET}}
       steps:
         - name: Current Weather
