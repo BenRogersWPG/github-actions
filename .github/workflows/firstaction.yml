@@ -48,6 +48,7 @@ jobs:
       cityname: Vancouver
       postalcode: V5Y1V4
       api_secret: ${{ secrets.WEATHERSTACK_SECRET }}
+      full_url: ${{ secrets.WEATHERSTACK_URL }}
     steps:
       - name: Current Weather
         run: | 
@@ -60,6 +61,11 @@ jobs:
       - name: Encode Weather
         run: | 
           curl -s --url http://api.weatherstack.com/current?access_key=$api_secret%26query=$cityname
+          echo $postalcode
+          echo $cityname
+      - name: Full URL
+        run: | 
+          curl -s --url full_url
           echo $postalcode
           echo $cityname
   dump:
